@@ -65,6 +65,30 @@ $on-laptop:        800px;
   }
 }
 
+.horizontal-snap {
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  height: calc(580px + 1rem);
+  padding: 1rem;
+  max-width: 100%;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal-snap > .jumbotron {
+  scroll-snap-align: center;
+}
+
+.horizontal-snap .display-4 {
+  width: 180px;
+  max-width: none;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
 .nav.navbar-nav.navbar-right, h1, h2, h3 {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
