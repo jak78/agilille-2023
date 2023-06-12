@@ -5,9 +5,17 @@
 - title: Devenir sponsor
   url: /devenir-sponsor
   visible: 0
-- title: Jeu des 7 célèbres
+- title: Les jeux Agilille
   url: /jeu-des-sept-celebres
   visible: 1
+  sub_items:
+    - title: Jeu des 7 célèbres
+      url: /jeu-des-sept-celebres
+      visible: 1
+    - title: Reglèment Gagne ton pass
+      url: /Agi'Lille 2023 - Règlement jeu concours.pdf
+      target: _blank
+      visible: 1
 - title: Soumettre un sujet
   url: https://sessionize.com/agilille-2023
   target: _blank

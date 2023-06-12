@@ -1,22 +1,33 @@
 <nav class="nav navbar" role="navigation">
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="navbar-container">
-      <a class="navbar-brand" href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/img/logo.png" alt="logo agilille">
-      </a>
-      <button id="navbar-toggle" class="navbar-toggle">
-          <span class="navbar-toggle-icon"><i class="fa fa-bars"></i></span>
-          Nos pages
-      </button>
-      <div id="navbar-menu" class="hide-items">
-          <ul class="navbar-items">
-              {% for item in site.data.menu %}
-              {% if 0 != item.visible %}
-              <li><a class="custom-button" href="{{ item.url | prepend: site.baseurl }}" target="{{ item.target }}">{{ item.title }}</a></li>
-              {% endif %}
-              {% endfor %}
-          </ul>
-      </div>
-  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-container">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/img/logo.png" alt="logo agilille">
+        </a>
+        <button id="navbar-toggle" class="navbar-toggle">
+            <span class="navbar-toggle-icon"><i class="fa fa-bars"></i></span>
+            Nos pages
+        </button>
+        <div id="navbar-menu" class="hide-items">
+            <ul class="navbar-items">
+                {% for item in site.data.menu %}
+                {% if 0 != item.visible %}
+                <li class="navbar-item"><a class="custom-button" href="{{ item.url | prepend: site.baseurl }}"
+                        target="{{ item.target }}">{{
+                        item.title }}</a>
+                        {% if item.sub_items %}
+                    <ul class="sub-items">
+                        {% for sub_item in item.sub_items %}
+                        <li><a class="custom-button" href="{{ sub_item.url | prepend: site.baseurl }}"
+                            target="{{ sub_item.target }}">{{sub_item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </nav>
-<script src="{{ "/js/navbar.js" | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/navbar.js" | prepend: site.baseurl }}"></script>

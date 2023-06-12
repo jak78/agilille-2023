@@ -92,6 +92,31 @@ $on-laptop:         800px;
     margin-bottom: 0;
     list-style-type: none;
     padding-inline-start: 0;
+   
+
+    .sub-items{
+      position: absolute;
+      display:none;
+      top: 100%;
+      gap: 1rem;
+      list-style: none;
+      padding-inline-start: 0;
+      flex-direction: column;
+      background: white;
+      border-radius: 3rem;
+      padding: 1rem;
+    }
+
+    .navbar-item{
+      position: relative;
+      z-index: 100;
+      padding: 1rem 0;
+       &:hover{
+        .sub-items{
+          display:flex;
+        }
+      }
+    }
   }
 
   @media (max-width: $on-palm) {
